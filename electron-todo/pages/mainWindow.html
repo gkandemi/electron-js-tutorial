@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TODO List | Electron.js | kablosuzkedi</title>
+    <link rel="stylesheet" href="../assets/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand text-white">TODO List | kablosuzkedi</a>
+      <div class="col-md-6 d-flex">
+        <input
+          type="text"
+          class="form-control mr-1"
+          id="todoValue"
+        />
+        <button class="btn btn-success mr-1" id="addBtn">Ekle</button>
+        <button class="btn btn-danger" id="closeBtn">Çıkış</button>
+      </div>
+    </nav>
+    <div class="container main-container mt-3">
+      <div class="todo-container container"></div>
+      <div class="alert-container row">
+        <div class="alert alert-warning col-md-8 offset-2 ">
+          <b>Herhangi bir TODO bulunmamaktadır!!!</b>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar fixed-bottom navbar-light bg-light">
+        <span>Toplam Kayıt Sayısı : <b class="total-count-container"></b></span>
+      </nav>
+    <script src="../assets/mainWindow.js"></script>
+  </body>
+</html>

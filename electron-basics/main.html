@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>kablosuzKedi | Electron.js Dersleri...</title>
+    <link rel="stylesheet" href="assets/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container pt-5">
+      <h1 class="text-center">kablosuzkedi | Electron.js Dersleri</h1>
+      <div class="row">
+        <div class="col-md-8 offset-2 pt-2">
+          <input type="text" id="value" />
+          <button class="btn btn-primary" id="sendBtn">Gönder</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 offset-2 pt-2">
+          <button class="btn-block btn btn-warning" id="openNewBtn">Yeni Bir Pencere Aç</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const electron = require("electron");
+      const { ipcRenderer } = electron;
+
+      let sendBtn = document.querySelector("#sendBtn");
+      let inputValue = document.querySelector("#value");
+      let openNew = document.querySelector("#openNewBtn");
+
+      openNew.addEventListener("click", () => {
+          ipcRenderer.send("key:newWindow");
+      })
+
+      sendBtn.addEventListener("click", () => {
+        // ipcRenderer.send("key", "kablosuzkedi | electron.js");
+        ipcRenderer.send("key:inputValue", inputValue.value);
+      });
+    </script>
+  </body>
+</html>
